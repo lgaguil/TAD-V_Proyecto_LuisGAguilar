@@ -67,11 +67,11 @@ barplot(conteo,main = "Histórico Ventas por agencia",
 
 
 
-fx_MetodoCompra = function(Marca2,MetComp){
-  ggplot((filter(Info_Autos, Marca==Marca2 & MetodoCompra%in%MetComp )), 
+fx_MetodoCompra = function(Marca2,MetComp,Agencia2){
+  ggplot((filter(Info_Autos, Marca==Marca2 & MetodoCompra%in%MetComp & Agencia%in%Agencia2 )), 
          aes(x=MetodoCompra , y=AñoVenta)) + geom_jitter(aes(colour=Agencia))
   
 }
 
-fx_MetodoCompra("Ford",c("Leasing","Contado","Prestamo"))
+fx_MetodoCompra("Ford",c("Leasing","Contado","Prestamo"),c("Zoozzy","Viva"))
 
