@@ -39,11 +39,11 @@ fx_Muestra_marcas('2018')
 View(filter(Info_Autos, Marca=="Ford" & País%in%c("Brazil") ))
 
 fx_MarcaPais = function(Marca2,Pais2){
-  ggplot((filter(Info_Autos, Marca==Marca2 & País%in%Pais2 )), aes(x=Año , y=País)) + geom_point()
+  ggplot((filter(Info_Autos, Marca==Marca2 & País%in%Pais2 )), aes(x=Año , y=País)) + geom_jitter()
   
 }
 
-fx_MarcaPais("Toyota",c("Brazil","Japan"))
+fx_MarcaPais("Toyota",c("United States","France"))
 
 
 
